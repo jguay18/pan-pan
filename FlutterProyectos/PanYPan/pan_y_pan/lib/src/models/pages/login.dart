@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:animate_do/animate_do.dart';
+import 'package:pan_y_pan/src/models/pages/menu_principal.dart';
 
 class LoginPage extends StatefulWidget {
   
@@ -42,17 +43,17 @@ class _LoginPageState extends State<LoginPage> {
                 prefixIcon: Icon(Icons.person_outline, color: Colors.white)
               ),
               ),
-               SizedBox(
-              height: 18.0,
+              SizedBox(
+               height: 18.0,
                ),
                TextField(
                  keyboardType: TextInputType.visiblePassword,
-               textCapitalization: TextCapitalization.sentences,
-               decoration: InputDecoration(
-               border: InputBorder.none,
-                hintText: 'Contraseña',
-                hintStyle: const TextStyle(color: Colors.white, fontSize: 15.0),
-                prefixIcon: Icon(Icons.lock, color: Colors.white)
+                 textCapitalization: TextCapitalization.sentences,
+                 decoration: InputDecoration(
+                 border: InputBorder.none,
+                 hintText: 'Contraseña',
+                 hintStyle: const TextStyle(color: Colors.white, fontSize: 15.0),
+                 prefixIcon: Icon(Icons.lock, color: Colors.white)
               ),
               ),
               SizedBox(
@@ -62,7 +63,12 @@ class _LoginPageState extends State<LoginPage> {
                 minWidth: 330.0,
                 height: 60.0,
                 child: RaisedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                     Navigator.push(
+                     context,
+                     MaterialPageRoute(builder: (context) => MenuPrincipal()),
+                       );
+                  },
                    color: Colors.cyan.shade700,
                    shape: RoundedRectangleBorder(
                    borderRadius: new BorderRadius.all(const Radius.circular(30.0)),
@@ -99,3 +105,5 @@ class Animacion extends StatelessWidget {
     );
   }
 }
+
+
