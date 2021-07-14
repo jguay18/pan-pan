@@ -2,7 +2,7 @@ import 'package:date_picker_timeline/date_picker_timeline.dart';
 import 'package:flutter/material.dart';
 
 class MenuPrincipal extends StatelessWidget {
-
+  DateTime _valini = new DateTime.now().add(Duration(days: -4));
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -11,7 +11,7 @@ class MenuPrincipal extends StatelessWidget {
               new Container(
               decoration: new BoxDecoration(
               image: new DecorationImage(
-              image: new AssetImage("assets/img/home.jpg",),
+              image: new AssetImage("assets/img/menu.jpg",),
               alignment: Alignment.topCenter,
               colorFilter: ColorFilter.mode(Colors.blueGrey.shade300, BlendMode.modulate),
               fit: BoxFit.fitWidth,
@@ -32,9 +32,15 @@ class MenuPrincipal extends StatelessWidget {
               fontWeight: FontWeight.w300,color: Colors.white),
              ),
               SizedBox(
-                height: 150.0,
+                height: 110.0,
               ),
-              DatePicker(DateTime.now())
+              DatePicker(
+              _valini,
+              initialSelectedDate: DateTime.now(),
+              selectionColor: Colors.black,
+              selectedTextColor: Colors.white,
+              locale: "en_US",
+            )
               
             
 

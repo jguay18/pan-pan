@@ -17,8 +17,8 @@ class _LoginPageState extends State<LoginPage> {
           new Container(
             decoration: new BoxDecoration(
               image: new DecorationImage(
-              image: new AssetImage("assets/img/login.jpg"),
-              colorFilter: ColorFilter.mode(Colors.deepOrange.shade300, BlendMode.modulate),
+              image: new AssetImage("assets/img/menuLogin2.jpg"),
+              colorFilter: ColorFilter.mode(Colors.blueGrey.shade300, BlendMode.modulate),
               fit: BoxFit.cover,
             ),
             ),
@@ -99,7 +99,7 @@ class Animacion extends StatelessWidget {
     return Container(
       child: Column(
         children: [
-          Image.asset("assets/img/tick.png", width: 250, height: 250,),
+          Image.asset("assets/img/pan_pan.png", width: 250, height: 250,),
         ],
       ),
     );

@@ -1,8 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.pan_y_pan">
    <application
-        android:label="pan_y_pan"
-        android:icon="@mipmap/ic_launcher">
+        android:label="PanYPan"
+        android:icon="@mipmap/pan_pan">
         <activity
             android:name=".MainActivity"
             android:launchMode="singleTop"
