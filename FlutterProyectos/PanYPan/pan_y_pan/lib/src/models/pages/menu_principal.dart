@@ -32,7 +32,7 @@ class MenuPrincipal extends StatelessWidget {
               fontWeight: FontWeight.w300,color: Colors.white),
              ),
               SizedBox(
-                height: 110.0,
+                height: 135.0,
               ),
               DatePicker(
               _valini,
