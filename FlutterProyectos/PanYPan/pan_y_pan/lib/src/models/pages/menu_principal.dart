@@ -39,29 +39,17 @@ class MenuPrincipal extends StatelessWidget {
                 SizedBox(
                   height: 65.0,
                 ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                  children: [
-                    IconButton(
-                      iconSize: 44.00,
-                      icon: Icon(Icons.ac_unit),
-                      onPressed: () {
-                        Scaffold.of(context).openDrawer();
-                      },
-                    ),
-                    Text(
-                      "Bienvenido",
-                      textAlign: TextAlign.center,
-                      style: new TextStyle(
-                          fontSize: 30.0,
-                          letterSpacing: 1.2,
-                          fontWeight: FontWeight.w300,
-                          color: Colors.white),
-                    ),
-                  ],
+                Text(
+                  "Bienvenido",
+                  textAlign: TextAlign.center,
+                  style: new TextStyle(
+                      fontSize: 30.0,
+                      letterSpacing: 1.2,
+                      fontWeight: FontWeight.w300,
+                      color: Colors.white),
                 ),
                 SizedBox(
-                  height: 135.0,
+                  height: 115.0,
                 ),
                 DatePicker(
                   _valini,
