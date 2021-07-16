@@ -1,33 +1,30 @@
 import 'package:flutter/material.dart';
 
-class HorizontalList extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      height: 80.0,
-      child: ListView(
-        scrollDirection: Axis.horizontal,
-        children: <Widget>[
-          Category(
-            image_location: 'assets/img/bread.png',
-            image_caption: 'Salado',
-          ),
-          Category(
-            image_location: 'assets/img/cupcake.png',
-            image_caption: 'Dulce',
-          ),
-          Category(
-            image_location: 'assets/img/caked.png',
-            image_caption: 'Pasteles',
-          ),
-          Category(
-            image_location: 'assets/img/cake.png',
-            image_caption: 'Especialidades',
-          ),
-        ],
-      ),
-    );
-  }
+Widget menuLineal() {
+  return Container(
+    height: 80.0,
+    child: ListView(
+      scrollDirection: Axis.horizontal,
+      children: <Widget>[
+        Category(
+          image_location: 'assets/img/bread.png',
+          image_caption: 'Salado',
+        ),
+        Category(
+          image_location: 'assets/img/cupcake.png',
+          image_caption: 'Dulce',
+        ),
+        Category(
+          image_location: 'assets/img/caked.png',
+          image_caption: 'Pasteles',
+        ),
+        Category(
+          image_location: 'assets/img/cake.png',
+          image_caption: 'Especialidades',
+        ),
+      ],
+    ),
+  );
 }
 
 class Category extends StatelessWidget {

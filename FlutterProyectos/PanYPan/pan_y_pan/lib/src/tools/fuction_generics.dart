@@ -64,7 +64,7 @@ Drawer menu(BuildContext context) {
             leading:
                 Iconos("pedidos"), // Icon(Icons.phone, color: Colors.black),
             title: Text('Pedidos'),
-            onTap: () => Navigator.pushReplacementNamed(context, 'contact'),
+            onTap: () => Navigator.pushReplacementNamed(context, 'horizontal'),
           ),
           ListTile(
             leading: Iconos("Cierre Diario"),
@@ -125,7 +125,7 @@ Drawer menu(BuildContext context) {
             leading:
                 Iconos("pedidos"), // Icon(Icons.phone, color: Colors.black),
             title: Text('Pedidos'),
-            onTap: () => Navigator.pushReplacementNamed(context, 'contact'),
+            onTap: () => Navigator.pushReplacementNamed(context, 'horizontal'),
           ),
           ListTile(
             leading: Iconos("Cierre Diario"),
