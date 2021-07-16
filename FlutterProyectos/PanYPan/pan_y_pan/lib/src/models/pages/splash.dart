@@ -43,7 +43,7 @@ class SplashPage extends StatelessWidget {
   }
 
   void changeScreen(BuildContext context) {
-    print(preferences.token);
+    //print(preferences.token);
     final String routeName = 'login';
     // preferences.token != '' ? 'login' : 'login';
 

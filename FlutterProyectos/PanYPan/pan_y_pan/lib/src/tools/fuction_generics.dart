@@ -5,6 +5,7 @@ import 'package:pan_y_pan/src/shared/user_preferences.dart';
 
 GlobalKey<ScaffoldState> scaffolKey = GlobalKey<ScaffoldState>();
 
+// ignore: non_constant_identifier_names
 Image Iconos(String nIcon) {
   // ignore: avoid_init_to_null
   Image? respimg = null;
@@ -38,6 +39,7 @@ Image Iconos(String nIcon) {
 Drawer menu(BuildContext context) {
   //esta variable se debe de cambiar para que se haga la validacio con un preference que ya este cargado.
   String rol = "1";
+  Preferences pref = Preferences();
   // ignore: avoid_init_to_null
   Drawer? dr = null;
   if (rol == "1") {
@@ -52,6 +54,7 @@ Drawer menu(BuildContext context) {
                     image: AssetImage('assets/img/barner.jpeg'),
                     fit: BoxFit.fill)),
           ),
+          Text("    Bienvenido " + pref.usuario),
           ListTile(
             leading: Iconos("Home"),
             title: Text('Inicio'),

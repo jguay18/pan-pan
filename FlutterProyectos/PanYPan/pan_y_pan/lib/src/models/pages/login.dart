@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:animate_do/animate_do.dart';
-import 'package:pan_y_pan/src/models/pages/menu_principal.dart';
+//import 'package:pan_y_pan/src/models/pages/menu_principal.dart';
+import 'package:pan_y_pan/src/tools/conexion.dart';
+import 'package:pan_y_pan/src/shared/user_preferences.dart';
 
 class LoginPage extends StatefulWidget {
   @override
@@ -8,6 +10,9 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
+  final _passwordController = TextEditingController();
+  final _usernameController = TextEditingController();
+  Preferences preferences = Preferences();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,6 +38,7 @@ class _LoginPageState extends State<LoginPage> {
             height: 15.0,
           ),
           TextField(
+            controller: _usernameController,
             keyboardType: TextInputType.emailAddress,
             textCapitalization: TextCapitalization.sentences,
             decoration: InputDecoration(
@@ -45,6 +51,7 @@ class _LoginPageState extends State<LoginPage> {
             height: 18.0,
           ),
           TextField(
+            controller: _passwordController,
             keyboardType: TextInputType.visiblePassword,
             textCapitalization: TextCapitalization.sentences,
             decoration: InputDecoration(
@@ -60,12 +67,7 @@ class _LoginPageState extends State<LoginPage> {
             minWidth: 330.0,
             height: 60.0,
             child: RaisedButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => MenuPrincipal()),
-                  );
-                },
+                onPressed: () => login(context),
                 color: Colors.cyan.shade700,
                 shape: RoundedRectangleBorder(
                   borderRadius:
@@ -85,6 +87,28 @@ class _LoginPageState extends State<LoginPage> {
         ],
       )),
     ]));
+  }
+
+  void login(BuildContext context) {
+    // _usernameController.text = "rutaj";
+    // _passwordController.text = "Nuevo";
+    final String username = _usernameController.text;
+    final String password = _passwordController.text;
+    LoginProvider lg = LoginProvider();
+    if (username == '' || password == '') {
+      ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(content: Text('Debes de llenar los campos requeridos')));
+    } else {
+      lg.validateAccount(email: username, password: password);
+      print(preferences.usulog);
+      if (preferences.usulog) {
+        Navigator.pushReplacementNamed(context, 'menu');
+      } else {
+        ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+            content: Text(
+                'No se permite el acceso, comunicate con el proveedor del sistema.')));
+      }
+    }
   }
 }
 

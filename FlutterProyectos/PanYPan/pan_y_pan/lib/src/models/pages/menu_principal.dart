@@ -4,6 +4,7 @@ import 'package:pan_y_pan/src/tools/fuction_generics.dart';
 //import 'package:pan_y_pan/src/tools/fuction_generics.dart';
 import 'package:pan_y_pan/src/widgets/drawer_widget.dart';
 
+// ignore: must_be_immutable
 class MenuPrincipal extends StatelessWidget {
   DateTime _valini = new DateTime.now().add(Duration(days: -4));
   @override
@@ -39,7 +40,6 @@ class MenuPrincipal extends StatelessWidget {
                 SizedBox(
                   height: 65.0,
                 ),
-<<<<<<< HEAD
                 Text(
                   "Bienvenido",
                   textAlign: TextAlign.center,
@@ -49,16 +49,6 @@ class MenuPrincipal extends StatelessWidget {
                       fontWeight: FontWeight.w300,
                       color: Colors.white),
                 ),
-=======
-                    Text("Bienvenido",
-                      textAlign: TextAlign.center,
-                      style: new TextStyle(
-                          fontSize: 30.0,
-                          letterSpacing: 1.2,
-                          fontWeight: FontWeight.w300,
-                          color: Colors.white),
-                    ),
->>>>>>> 8fa21d7cc0272b5601477707c4399ee09aeaa657
                 SizedBox(
                   height: 115.0,
                 ),
