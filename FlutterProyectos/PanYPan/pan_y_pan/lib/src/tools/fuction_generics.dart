@@ -166,90 +166,89 @@ Widget CardPedidos() {
   cc = Container(
     height: 245,
     width: 202,
-    child: Stack(children: <Widget>[
-      Positioned(
-        bottom: 0,
-        left: 0,
-        right: 0,
-        child: Container(
-          height: 221,
-          decoration: BoxDecoration(
-              color: Colors.white,
-              borderRadius: BorderRadius.circular(29),
-              boxShadow: [
-                BoxShadow(
-                  offset: Offset(0, 10),
-                  blurRadius: 33,
-                ),
-              ]),
-        ),
-      )
-    ]),
-  );
-  Image.asset(
-    "assets/img/cupcake.png",
-    width: 150,
-  );
-  Positioned(
-      top: 35,
-      right: 10,
-      child: Column(
-        children: <Widget>[
-          IconButton(icon: Icon(Icons.favorite_border), onPressed: () {}),
-          Container(
-            padding: EdgeInsets.symmetric(vertical: 8, horizontal: 6),
+    child: Stack(
+      children: <Widget>[
+        Positioned(
+          bottom: 0,
+          left: 0,
+          right: 0,
+          top: 0,
+          child: Container(
+            height: 221,
             decoration: BoxDecoration(
                 color: Colors.white,
-                borderRadius: BorderRadius.circular(16),
+                borderRadius: BorderRadius.circular(29),
                 boxShadow: [
                   BoxShadow(
-                    offset: Offset(3, 7),
-                    blurRadius: 20,
+                    offset: Offset(0, 10),
+                    blurRadius: 33,
+                    color: Color(0xFFD3D3D3).withOpacity(.84),
                   )
                 ]),
-          )
-        ],
-      ));
-  Positioned(
-      child: Container(
-    height: 85,
-    width: 202,
-    child: Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: <Widget>[
-        Padding(
-          padding: EdgeInsets.only(left: 24),
-          child: RichText(
-              text: TextSpan(children: [
-            TextSpan(
-                text: "Crushing & Influence",
-                style: TextStyle(fontWeight: FontWeight.bold)),
-            TextSpan(text: "Gary Venchuk")
-          ])),
+          ),
         ),
-        Spacer(),
-        Row(
-          children: <Widget>[
-            Container(
-              width: 101,
-              padding: EdgeInsets.symmetric(vertical: 10),
-              alignment: Alignment.center,
-              child: Text("Detalles"),
-            ),
-            Expanded(
-                child: Container(
-              padding: EdgeInsets.symmetric(vertical: 10),
-              decoration: BoxDecoration(color: Colors.black),
-              child: Text(
-                "leer",
-                style: TextStyle(color: Colors.white),
-              ),
-            ))
-          ],
-        )
+        Image.asset(
+          "assets/img/bread.png",
+          width: 150,
+        ),
+        Positioned(
+            top: 160,
+            child: Container(
+                height: 85,
+                width: 202,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: <Widget>[
+                    Padding(
+                      padding: EdgeInsets.only(left: 24),
+                      child: RichText(
+                        text: TextSpan(
+                          style: TextStyle(
+                            color: Colors.black,
+                          ),
+                          children: [
+                            TextSpan(
+                                text: "crushing & Influence" "\n",
+                                style: TextStyle(fontWeight: FontWeight.bold)),
+                            TextSpan(
+                              text: "GARY VENKUNW",
+                              style: TextStyle(fontWeight: FontWeight.normal),
+                            ),
+                          ],
+                        ),
+                      ),
+                    ),
+                    Spacer(),
+                    Row(
+                      children: <Widget>[
+                        Container(
+                          width: 101,
+                          padding: EdgeInsets.symmetric(vertical: 10),
+                          alignment: Alignment.center,
+                          child: Text("Details"),
+                        ),
+                        Expanded(
+                            child: Container(
+                          alignment: Alignment.center,
+                          padding: EdgeInsets.symmetric(vertical: 10),
+                          decoration: BoxDecoration(
+                            color: Colors.black,
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(29),
+                                bottomRight: Radius.circular(29)),
+                          ),
+                          child: Text(
+                            "Pedir",
+                            style: TextStyle(color: Colors.white),
+                          ),
+                        ))
+                      ],
+                    )
+                  ],
+                )))
       ],
     ),
-  ));
+  );
 
   return cc;
 }
