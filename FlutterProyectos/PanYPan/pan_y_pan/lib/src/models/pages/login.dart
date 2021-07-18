@@ -39,6 +39,7 @@ class _LoginPageState extends State<LoginPage> {
           ),
           TextField(
             controller: _usernameController,
+            style: TextStyle(color: Colors.white),
             keyboardType: TextInputType.emailAddress,
             textCapitalization: TextCapitalization.sentences,
             decoration: InputDecoration(
@@ -52,8 +53,10 @@ class _LoginPageState extends State<LoginPage> {
           ),
           TextField(
             controller: _passwordController,
+            obscureText: true,
             keyboardType: TextInputType.visiblePassword,
             textCapitalization: TextCapitalization.sentences,
+            style: TextStyle(color: Colors.white),
             decoration: InputDecoration(
                 border: InputBorder.none,
                 hintText: 'Contraseña',
