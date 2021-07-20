@@ -33,9 +33,9 @@ class LoginProvider {
     final resp = await http.get(url);
     //final decodeData = json.decode(resp.body);
     Map<String, dynamic> respJson = json.decode(resp.body);
-    print(respJson);
-    print(respJson["Datos"]["Correo"]);
-    if (respJson["error"] != null) {
+    //print(respJson);
+    //print(respJson["Datos"]["Correo"]);
+    if (respJson.isEmpty) {
       preferences.usulog = false;
     } else {
       preferences.usuario = respJson["Usuario"];

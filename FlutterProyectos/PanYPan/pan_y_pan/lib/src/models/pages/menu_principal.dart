@@ -1,5 +1,6 @@
 import 'package:date_picker_timeline/date_picker_timeline.dart';
 import 'package:flutter/material.dart';
+import 'package:pan_y_pan/src/tools/extras/details_screen.dart';
 import 'package:pan_y_pan/src/tools/extras/horizontal_list.dart';
 import 'package:pan_y_pan/src/tools/fuction_generics.dart';
 //import 'package:pan_y_pan/src/tools/fuction_generics.dart';
@@ -63,11 +64,11 @@ class MenuPrincipal extends StatelessWidget {
                 SizedBox(
                   height: 25.0,
                 ),
-                menuLineal(),
-                SizedBox(
-                  height: 25.0,
-                ),
-                CardPedidos(),
+                // menuLineal(),
+                // SizedBox(
+                //   height: 25.0,
+                // ),
+                CardPedidos(context),
 
                 // Container(
                 //   child: HorizontalList(),

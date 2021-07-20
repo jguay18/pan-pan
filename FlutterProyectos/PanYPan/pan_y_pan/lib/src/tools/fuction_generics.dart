@@ -1,4 +1,6 @@
 //import 'dart:html';
+//import 'dart:js';
+
 import 'package:flutter/material.dart';
 import 'package:pan_y_pan/src/models/pages/pedidos.dart';
 import 'package:pan_y_pan/src/shared/user_preferences.dart';
@@ -160,7 +162,8 @@ Drawer menu(BuildContext context) {
   return dr;
 }
 
-Widget CardPedidos() {
+// ignore: non_constant_identifier_names
+Widget CardPedidos(BuildContext context) {
   Widget? cc = null;
   SizedBox(height: 30);
   cc = Container(
@@ -187,9 +190,14 @@ Widget CardPedidos() {
                 ]),
           ),
         ),
-        Image.asset(
-          "assets/img/bread.png",
-          width: 150,
+        Row(
+          children: [
+            Image.asset(
+              "assets/img/bread.png",
+              width: 100,
+            ),
+            turno("PM"),
+          ],
         ),
         Positioned(
             top: 160,
@@ -221,11 +229,16 @@ Widget CardPedidos() {
                     Spacer(),
                     Row(
                       children: <Widget>[
-                        Container(
-                          width: 101,
-                          padding: EdgeInsets.symmetric(vertical: 10),
-                          alignment: Alignment.center,
-                          child: Text("Details"),
+                        InkWell(
+                          child: Container(
+                            width: 101,
+                            padding: EdgeInsets.symmetric(vertical: 10),
+                            alignment: Alignment.center,
+                            child: Text("Details"),
+                          ),
+                          onTap: () => {
+                            Navigator.pushReplacementNamed(context, 'details')
+                          },
                         ),
                         Expanded(
                             child: Container(
@@ -252,3 +265,86 @@ Widget CardPedidos() {
 
   return cc;
 }
+
+// ignore: non_constant_identifier_names
+TextStyle formato_texto(String sizet, String color, bool bold) {
+  Color cs;
+  switch (color) {
+    case 'BA':
+      cs = Colors.black;
+      break;
+    case 'BL':
+      cs = Colors.blueAccent;
+      break;
+    case 'WH':
+      cs = Colors.white;
+      break;
+    default:
+      cs = Colors.yellow;
+      break;
+  }
+  FontWeight fw;
+  if (bold) {
+    fw = FontWeight.bold;
+  } else {
+    fw = FontWeight.normal;
+  }
+  double sizenum;
+  switch (sizet) {
+    case 'XS':
+      sizenum = 5.00;
+      break;
+    case 'N':
+      sizenum = 18.00;
+      break;
+    case 'M':
+      sizenum = 16.00;
+      break;
+    case 'L':
+      sizenum = 22.00;
+      break;
+    default:
+      sizenum = 12.00;
+      break;
+  }
+  return TextStyle(
+    fontSize: sizenum,
+    fontWeight: fw,
+    color: cs,
+  );
+}
+
+Image turno(String meridiano) {
+  Image img;
+  if (meridiano == "AM") {
+    img = Image.asset(
+      "assets/img/AM.png",
+      width: 100,
+    );
+  } else {
+    img = Image.asset(
+      "assets/img/PM.png",
+      width: 100,
+    );
+  }
+  return img;
+}
+// TextStyle formato_condicional(String numero) {
+//   TextStyle tt;
+//   switch (numero) {
+//     case '1':
+//       tt = formato_texto('XS', 'BL', false);
+//       break;
+//     case '2':
+//       tt = formato_texto('N', 'BA', true);
+//       break;
+//     case '3':
+//       tt = formato_texto('M', 'JJ', false);
+//       break;
+//     default:
+//       tt = formato_texto('L', 'WH', true);
+//       break;
+//   }
+
+//   return tt;
+// }
