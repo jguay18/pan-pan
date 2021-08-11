@@ -2,7 +2,7 @@
 //import 'dart:js';
 
 import 'package:flutter/material.dart';
-import 'package:pan_y_pan/src/models/pages/pedidos.dart';
+import 'package:pan_y_pan/src/pages/pedidos.dart';
 import 'package:pan_y_pan/src/shared/user_preferences.dart';
 
 GlobalKey<ScaffoldState> scaffolKey = GlobalKey<ScaffoldState>();
@@ -86,7 +86,7 @@ Drawer menu(BuildContext context) {
           ListTile(
             leading: Iconos("Sucursales"),
             title: Text('Sucursales'),
-            onTap: () => Navigator.pushReplacementNamed(context, 'contact'),
+            onTap: () => Navigator.pushReplacementNamed(context, 'sucursales'),
           ),
           ListTile(
             leading: Iconos("Usuarios"),
