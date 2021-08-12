@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pan_y_pan/src/models/sucursal_model.dart';
-import 'package:pan_y_pan/src/pages/sucursal_detail_page.dart';
+import 'package:pan_y_pan/src/pages/sucursal/sucursal_detail_page.dart';
 import 'package:pan_y_pan/src/tools/fuction_generics.dart';
 
 class SucursalHorizontalWidget extends StatelessWidget {

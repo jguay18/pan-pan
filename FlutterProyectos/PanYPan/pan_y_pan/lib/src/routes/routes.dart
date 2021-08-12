@@ -4,7 +4,7 @@ import 'package:pan_y_pan/src/pages/login.dart';
 import 'package:pan_y_pan/src/pages/menu_principal.dart';
 import 'package:pan_y_pan/src/pages/pedidos.dart';
 import 'package:pan_y_pan/src/pages/splash.dart';
-import 'package:pan_y_pan/src/pages/sucursal_page.dart';
+import 'package:pan_y_pan/src/pages/sucursal/sucursal_page.dart';
 import 'package:pan_y_pan/src/tools/extras/details_screen.dart';
 //import 'package:pan_y_pan/src/tools/extras/horizontal_list.dart';
 

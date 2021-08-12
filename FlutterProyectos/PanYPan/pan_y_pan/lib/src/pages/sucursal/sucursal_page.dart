@@ -37,11 +37,8 @@ class SucursalesPage extends StatelessWidget {
           ),
           SingleChildScrollView(
               child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                  // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
-                SizedBox(
-                  height: 25.0,
-                ),
                 Text(
                   "Lista de Sucursales",
                   textAlign: TextAlign.center,
@@ -51,32 +48,15 @@ class SucursalesPage extends StatelessWidget {
                       fontWeight: FontWeight.w300,
                       color: Colors.white),
                 ),
-                SizedBox(
-                  height: 25.0,
-                ),
                 //ListView(
                 //   padding: EdgeInsets.all(8.0),
                 //children: [
                 _sucursales(),
                 //Divider(),
-                Text(
-                  "321",
-                  textAlign: TextAlign.center,
-                  style: new TextStyle(
-                      fontSize: 30.0,
-                      letterSpacing: 1.2,
-                      fontWeight: FontWeight.w300,
-                      color: Colors.white),
-                ),
-                SizedBox(
-                  height: 35.0,
-                ),
+                SizedBox(height: 30),
                 //   ],
                 // ),
               ])),
-          SizedBox(
-            height: 135.0,
-          ),
         ],
       ),
     );
