@@ -60,7 +60,7 @@ Drawer menu(BuildContext context) {
           ListTile(
             leading: Iconos("Home"),
             title: Text('Inicio'),
-            onTap: () => Navigator.pushReplacementNamed(context, ''),
+            onTap: () => Navigator.pushReplacementNamed(context, 'inicio'),
           ),
           ListTile(
             leading:

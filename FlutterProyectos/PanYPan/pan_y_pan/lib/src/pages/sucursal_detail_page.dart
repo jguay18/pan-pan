@@ -1,13 +1,27 @@
-import 'package:date_picker_timeline/date_picker_timeline.dart';
 import 'package:flutter/material.dart';
-import 'package:pan_y_pan/src/tools/extras/details_screen.dart';
-import 'package:pan_y_pan/src/tools/extras/horizontal_list.dart';
-import 'package:pan_y_pan/src/tools/fuction_generics.dart';
-//import 'package:pan_y_pan/src/tools/fuction_generics.dart';
 import 'package:pan_y_pan/src/widgets/drawer_widget.dart';
 
-// ignore: must_be_immutable
-class MenuPrincipal extends StatelessWidget {
+class DetailSucursal extends StatefulWidget {
+  final codigosucursal;
+  final nombresucursal;
+  final estadosucursal;
+  final encargadosucursal;
+  final telefonosucursal;
+  final direccionsucursal;
+
+  DetailSucursal(
+      {this.codigosucursal,
+      this.nombresucursal,
+      this.estadosucursal,
+      this.encargadosucursal,
+      this.telefonosucursal,
+      this.direccionsucursal});
+
+  @override
+  _DetailSucursalState createState() => _DetailSucursalState();
+}
+
+class _DetailSucursalState extends State<DetailSucursal> {
   DateTime _valini = new DateTime.now().add(Duration(days: -4));
   @override
   Widget build(BuildContext context) {
@@ -32,10 +46,10 @@ class MenuPrincipal extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 SizedBox(
-                  height: 65.0,
+                  height: 25.0,
                 ),
                 Text(
-                  "Bienvenido",
+                  widget.nombresucursal!,
                   textAlign: TextAlign.center,
                   style: new TextStyle(
                       fontSize: 30.0,
@@ -44,15 +58,9 @@ class MenuPrincipal extends StatelessWidget {
                       color: Colors.white),
                 ),
                 SizedBox(
-                  height: 115.0,
+                  height: 20.0,
                 ),
-                DatePicker(
-                  _valini,
-                  initialSelectedDate: DateTime.now(),
-                  selectionColor: Colors.black,
-                  selectedTextColor: Colors.white,
-                  locale: "en_US",
-                ),
+
                 SizedBox(
                   height: 25.0,
                 ),
@@ -60,7 +68,7 @@ class MenuPrincipal extends StatelessWidget {
                 // SizedBox(
                 //   height: 25.0,
                 // ),
-                CardPedidos(context),
+                //CardPedidos(context),
 
                 // Container(
                 //   child: HorizontalList(),

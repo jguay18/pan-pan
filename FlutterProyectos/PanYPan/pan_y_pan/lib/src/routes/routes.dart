@@ -16,5 +16,6 @@ Map<String, WidgetBuilder> getApplicatiobRoutes() {
     'pedidos': (context) => Pedidos(),
     'details': (context) => DetailsScreen(),
     'sucursales': (context) => SucursalesPage(),
+    'inicio': (context) => MenuPrincipal(),
   };
 }

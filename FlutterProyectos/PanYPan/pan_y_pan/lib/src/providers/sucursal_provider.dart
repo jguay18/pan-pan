@@ -39,15 +39,17 @@ class SucursalProvider {
     final url =
         Uri.http(_baseUrl, _compbaseUrl, {'metodo': _metodo, 'datos': _datos});
     final resp = await http.get(url);
-
-    //final decodeData = json.decode(resp.body);
+    print(resp.body);
+    String datos = "{ \"page\":1, \"results\":" + resp.body + " }";
+    final decodeData = json.decode(resp.body);
     //Map<String, dynamic> respJson = json.decode(resp.body);
     //print(respJson);
-    final decodedData = json.decode(resp.body);
+    //final decodedData = json.decode(datos);
     //print(decodedData["results"]);
     //print(resp.body);
 
-    final sucursales = Sucursales.fromJsonArray(decodedData["results"]).items;
+    final sucursales = Sucursales.fromJsonArray(decodeData).items;
+    //decodedData["results"]).items;
     _populares.addAll(sucursales);
     popularesSink(_populares);
 
