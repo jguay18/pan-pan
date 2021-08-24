@@ -21,6 +21,16 @@ class SucursalesPage extends StatelessWidget {
       //     IconButton(onPressed: () => logout(context), icon: Icon(Icons.logout))
       //   ],
       // ),
+      floatingActionButton: FloatingActionButton(
+        child: Icon(
+          Icons.add,
+          color: Colors.black,
+        ),
+        onPressed: () =>
+            Navigator.pushReplacementNamed(context, 'addsucursales'),
+        //onTap: () => Navigator.pushReplacementNamed(context, 'addsucursal'),
+        backgroundColor: Colors.orange,
+      ),
       body: Stack(
         children: <Widget>[
           new Container(
